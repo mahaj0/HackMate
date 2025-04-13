@@ -1,8 +1,6 @@
-# pages/login.py
 import dash
-from dash import html, dcc, Input, Output, State
+from dash import html, dcc
 import dash_bootstrap_components as dbc
-from utils.db_utils import verify_user, register_user
 
 dash.register_page(__name__, path="/login", name="Login")
 
@@ -14,15 +12,3 @@ layout = dbc.Container([
     html.A("Go to Signup", href="/signup"),
     html.Div(id="login-message", style={"marginTop": "10px"})
 ])
-
-@dash.callback(
-    Output("login-message", "children"),
-    Input("login-btn", "n_clicks"),
-    State("login-email", "value"),
-    State("login-password", "value"),
-    prevent_initial_call=True
-)
-def handle_login(n, email, password):
-    if verify_user(email, password):
-        return dbc.Alert("Login successful!", color="success")
-    return dbc.Alert("Invalid credentials. Please try again.", color="danger")
