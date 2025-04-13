@@ -1,8 +1,8 @@
 import dash
-from dash import html, dcc
+from dash import ctx, html, dcc
 import dash_bootstrap_components as dbc
-from dash import Input, Output, State
-from openai_utils import get_ai_ideas
+import callbacks.idea_callbacks
+import callbacks.sprint_callbacks
 
 # Initialize app
 app = dash.Dash(
@@ -45,6 +45,27 @@ app.index_string = """
 </html>
 """
 
+# Navbar with Log in and Sign up
+navbar = dbc.Row([
+    dbc.Col(),
+    dbc.Col([
+        dcc.Link("Log in", href="/login", style={
+            "marginRight": "10px",
+            "color": "#0d6efd",
+            "fontWeight": "500",
+            "textDecoration": "none"
+        }),
+        dcc.Link("Sign up", href="/signup", style={
+            "padding": "6px 12px",
+            "backgroundColor": "#0d6efd",
+            "color": "white",
+            "borderRadius": "6px",
+            "textDecoration": "none",
+            "fontWeight": "500"
+        }),
+    ], width="auto")
+], justify="end", align="center", style={"padding": "20px", "marginRight": "30px"})
+
 # Sidebar
 sidebar = dbc.Col(
     [
@@ -77,16 +98,17 @@ sidebar = dbc.Col(
     }
 )
 
-# Page container
+# Main content area
 main_content = dbc.Col(
     [
+        navbar,  # Add the top-right navbar here
         dash.page_container
     ],
     width=10,
     style={"padding": "30px"}
 )
 
-# App layout
+# Final layout
 app.layout = dbc.Container([
     dbc.Row([
         sidebar,
@@ -94,25 +116,5 @@ app.layout = dbc.Container([
     ])
 ], fluid=True)
 
-@app.callback(
-    Output("idea-output", "children"),
-    Input("generate-btn", "n_clicks"),
-    State("idea-input", "value"),
-    prevent_initial_call=True
-)
-def generate_ideas(n, user_input):
-    if not user_input:
-        return dbc.Alert("Please enter what you're building.", color="warning")
-
-    try:
-        ideas = get_ai_ideas(user_input)
-        return html.Div([
-            html.H5("Here are some AI-generated ideas:"),
-            html.Pre(ideas, style={"whiteSpace": "pre-wrap"})
-        ])
-    except Exception as e:
-        return dbc.Alert(f"Something went wrong: {str(e)}", color="danger")
-
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
