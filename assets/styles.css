@@ -1,0 +1,8 @@
+.sidebar-link {
+    padding: 4px 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+.sidebar-link:hover {
+    color: #0d6efd;
+}

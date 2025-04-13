@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- Environment ---
+venv/
+.env
+
+# --- OS / System files ---
+.DS_Store
+Thumbs.db
+
+# --- VS Code project settings (optional) ---
+.vscode/
+
+# --- Log / temp files ---
+*.log
+*.tmp
+*.swp
+*.bak
+
+# --- Jupyter (if used) ---
+.ipynb_checkpoints/
