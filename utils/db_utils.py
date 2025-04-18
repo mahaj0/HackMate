@@ -27,13 +27,12 @@ def register_user(username, email, password):
     return True, "User registered successfully"
 
 def verify_user(email, password):
-    if not email or not password:
-        return False  # Safe guard against None
-
     conn = get_connection()
     cursor = conn.cursor()
     hashed = hash_password(password)
-    cursor.execute("SELECT * FROM users WHERE email=? AND password_hash=?", (email, hashed))
-    result = cursor.fetchone()
+    cursor.execute("SELECT username FROM users WHERE email=? AND password_hash=?", (email, hashed))
+    row = cursor.fetchone()
     conn.close()
-    return result is not None
+    if row:
+        return {"username": row[0], "email": email}
+    return None
