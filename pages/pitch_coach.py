@@ -30,7 +30,16 @@ layout = dbc.Container([
             ], title="📽️ Demo"),
         ], start_collapsed=True, className="mb-4"),
 
-        dbc.Button("Generate Pitch Preview", id="generate-pitch-btn", color="primary", className="mb-3"),
+        dbc.Row([
+            dbc.Button("AI Generate Pitch", id="ai-generate-btn", color="info", className="mb-3 me-2"),
+            dbc.Button("Generate Pitch Preview", id="generate-pitch-btn", color="primary", className="mb-3"),
+        ]),
+
+        dcc.Loading(
+            html.Div(id="ai-status"),
+            type="circle",
+            color="primary"
+        ),
 
         html.Hr(),
 
