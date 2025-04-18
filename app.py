@@ -7,7 +7,10 @@ import json
 import callbacks.idea_callbacks
 import callbacks.sprint_callbacks
 import callbacks.session_callbacks 
-import callbacks.home_callbacks  # 👈 Add this
+import callbacks.home_callbacks
+import callbacks.team_callbacks
+import callbacks.pitch_callbacks
+
 
 app = dash.Dash(
     __name__,
