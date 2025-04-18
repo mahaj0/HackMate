@@ -8,7 +8,7 @@ HackMate is an all-in-one web app designed to supercharge your hackathon workflo
 
 Watch the full walkthrough on YouTube:
 
-▶️ [HackMate Playlist](https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID)
+▶️ [HackMate Playlist](https://www.youtube.com/watch?v=MPH03laePh0)
 
 ---
 
