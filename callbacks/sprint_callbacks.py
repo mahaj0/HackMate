@@ -3,7 +3,6 @@ from dash import Input, Output, State, html, dcc, ctx
 import base64
 import dash_bootstrap_components as dbc
 
-
 # Add milestone
 @dash.callback(
     Output("sprint-store", "data"),
