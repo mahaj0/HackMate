@@ -6,7 +6,8 @@ import json
 # Register callbacks separately
 import callbacks.idea_callbacks
 import callbacks.sprint_callbacks
-import callbacks.session_callbacks  # 👈 NEW!
+import callbacks.session_callbacks 
+import callbacks.home_callbacks  # 👈 Add this
 
 app = dash.Dash(
     __name__,
@@ -14,6 +15,7 @@ app = dash.Dash(
     suppress_callback_exceptions=True,
     external_stylesheets=[dbc.themes.FLATLY]
 )
+
 app.title = "HackMate"
 
 # HTML Template
@@ -92,9 +94,12 @@ main_content = dbc.Col([
 ], width=10, style={"padding": "30px"})
 
 # Final layout
+session_store = dcc.Store(id="session-store", storage_type="local")  # <-- change this
+
+
 app.layout = dbc.Container([
-    dcc.Store(id="session-store", storage_type="session"),
-    
+    session_store,
+    dcc.Location(id="url", refresh=False),          # For page routing
     dbc.Row([
         sidebar,
         dbc.Col([
@@ -104,5 +109,6 @@ app.layout = dbc.Container([
     ])
 ], fluid=True)
 
+
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True)

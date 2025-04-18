@@ -6,6 +6,7 @@ dash.register_page(__name__, path="/signup", name="Signup")
 
 layout = dbc.Container([
     html.H3("📝 Sign Up", style={"marginBottom": "20px"}),
+
     dcc.Input(id="signup-username", type="text", placeholder="Username", className="form-control mb-2"),
     dcc.Input(id="signup-email", type="email", placeholder="Email", className="form-control mb-2"),
     dcc.Input(id="signup-password", type="password", placeholder="Password", className="form-control mb-2"),
