@@ -1,4 +1,4 @@
-# 🚀 HackMate – AI-Powered Hackathon Co-Pilot
+# HackMate; AI-Powered Hackathon Co-Pilot
 
 HackMate is an all-in-one web app designed to supercharge your hackathon workflow. Whether you're brainstorming ideas, organizing sprints, managing team dynamics, or crafting the perfect pitch—HackMate has you covered. With built-in AI features, intuitive UI, and exportable content, it's your ultimate hackathon sidekick.
 
@@ -8,30 +8,30 @@ HackMate is an all-in-one web app designed to supercharge your hackathon workflo
 
 Watch the full walkthrough on YouTube:
 
-▶️ [HackMate Playlist](https://www.youtube.com/watch?v=MPH03laePh0)
+[HackMate Playlist](https://www.youtube.com/watch?v=MPH03laePh0)
 
 ---
 
-## ✨ Features
+## Features
 
-### 🧠 Idea Generator
+### Idea Generator
 Powered by Gemini AI, generate fresh and refined project ideas with the click of a button. Prompt-based suggestions and easy export.
 
-### 🧑‍💼 Team Dynamics
+### Team Dynamics
 Quickly add and assign team members with roles. Remove, update, and export team configurations as needed.
 
-### 📅 Sprint Planner
+### Sprint Planner
 Add milestones, set deadlines, mark them complete, and track progress visually with a dynamic progress bar. Export the entire plan.
 
-### 🖥 Pitch Coach
+### Pitch Coach
 Step-by-step pitch structuring tool—manually or through AI generation. Export your pitch instantly for submissions or demos.
 
-### 🔐 Auth System
+### Auth System
 Signup/Login functionality backed by SQLite for a personalized experience.
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - [Dash](https://plotly.com/dash/) (Frontend + Backend)
 - [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)
@@ -68,13 +68,12 @@ Signup/Login functionality backed by SQLite for a personalized experience.
      GEMINI_API_KEY=your_google_generative_ai_key
 
 
-**📦 Export Options**
+** Export Options**
 
-📝 Export team list
-📋 Export sprint plan
-📄 Export pitch
-💡 Export idea suggestions
-
-🧠 Inspiration
+Export team list
+Export sprint plan
+Export pitch
+Export idea suggestions
+Inspiration
 HackMate was created to reduce the chaos and decision fatigue in fast-paced hackathons. With built-in AI assistance, you focus on building—HackMate handles the rest.
 
